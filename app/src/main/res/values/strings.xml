@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ucp2pam</string>
+    <string name="nama">Nama Mahasiswa</string>
+    <string name="nim">NIM</string>
+    <string name="konsentrasi">Konsentrasi</string>
+    <string name="judul">Judul Skripsi</string>
+    <string name="dosen1">Dosen Pembimbing 1</string>
+    <string name="dosen2">Dosen Pembimbing 2</string>
+    <string name="d1">Haris Setiawan</string>
+    <string name="d2">Cahya Damarjati</string>
+    <string name="d3">Aprilia Kurniati</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_back">Back</string>
+</resources>
