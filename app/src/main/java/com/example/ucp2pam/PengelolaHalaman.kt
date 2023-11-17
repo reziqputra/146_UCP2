@@ -23,12 +23,12 @@ enum class PengelolaHalaman {
 }
 
 @Composable
-fun EsJumboApp(
+fun ReziqApp(
     viewModel: dataViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
     Scaffold() { innerPadding ->
-        val uiState by viewModel.uiState.collectAsState()
+
         NavHost(
             navController = navController,
             startDestination = PengelolaHalaman.Home.name,
@@ -39,30 +39,7 @@ fun EsJumboApp(
                     onNextButtonClicked = { navController.navigate(PengelolaHalaman.form.name) }
                 )
             }
-            composable(route = PengelolaHalaman.form.name){
-                Halamansatu(onSubmitButtonClicked = {
-                    viewModel.setData(it)
-                    navController.navigate(PengelolaHalaman.Rasa.name)
-                })
-            }
-            composable(route = PengelolaHalaman.Rasa.name) {
-                val context = LocalContext.current
-                HalamanSatu(
-                    pilihanRasa = flavors.map { id -> context.resources.getString(id) },
-                    onSelectionChanged = { viewModel.setRasa(it) },
-                    onConfirmButtonClicked = { viewModel.setJumlah(it) },
-                    onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
-                    onCancelButtonClicked = {
-                        cancelOrderAndNavigateToHome(
-                            viewModel,
-                            navController
-                        )
-                    }
-                )
-            }
-            composable(route = PengelolaHalaman.Summary.name){
-                HalamanDua(orderUIState = uiState, onCancelButtonClicked = { cancelOrderAndNavigateToRasa(navController)  })
-            }
+
         }
     }
 }
