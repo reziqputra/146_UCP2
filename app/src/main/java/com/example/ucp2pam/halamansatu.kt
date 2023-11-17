@@ -37,6 +37,8 @@ import com.example.ucp2pam.data.dataUiState
 @Composable
 fun Halamansatu(
     dataViewModel: dataViewModel = viewModel(),
+    pilihanDosen: List<String>,
+    modifier: Modifier = Modifier,
     onSubmitButtonClicked: (MutableList<String>) -> Unit) {
 
     var namaTxt by remember {
